@@ -1,5 +1,10 @@
 import Vue from 'vue';
-import copy from './copy';
 
-Vue.directive('copy', copy);
+// 自动导入并注册
+const contexts = require.context('../directives', false, /\.js$/);
+contexts.keys().forEach(key => {
+  const directive = contexts(key).default;
+  const name = key.slice(2, key.length - 3)
+  Vue.directive(name, directive);
+})
 
