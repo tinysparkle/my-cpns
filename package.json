@@ -7,6 +7,8 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@wangeditor/editor": "^5.1.0",
+    "@wangeditor/editor-for-vue": "^1.0.1",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.8",
     "vue": "^2.6.11",

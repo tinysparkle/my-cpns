@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: '/show-cpns',
-    name: 'ShowDirectives',
+    name: 'ShowCpns',
     component: () => import('../views/cpns/index')
   }
 ]

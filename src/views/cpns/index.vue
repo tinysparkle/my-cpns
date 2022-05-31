@@ -4,6 +4,11 @@
     <Slider3D/>
     <h1>文件上传</h1>
     <Upload accept="image/jpeg" />
+    <h1>WangEditor</h1>
+    <WangEditor 
+      language="zh-CN"
+      :disabled="false"
+      v-model="editorVal"/>
   </div>
 </template>
 
@@ -19,6 +24,11 @@
   export default {
     components: {
       ...Cpns
+    },
+    data() {
+      return {
+        editorVal: '',
+      }
     }
   }
 </script>
