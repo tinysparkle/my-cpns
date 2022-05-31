@@ -13,6 +13,11 @@ const routes = [
     path: '/show-directives',
     name: 'ShowDirectives',
     component: () => import('../views/directives/index')
+  },
+  {
+    path: '/show-cpns',
+    name: 'ShowDirectives',
+    component: () => import('../views/cpns/index')
   }
 ]
 
