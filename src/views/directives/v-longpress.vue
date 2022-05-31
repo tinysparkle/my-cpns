@@ -1,5 +1,7 @@
 <template>
-  <button v-longpress="longpress">长按</button>
+  <div>
+    <button v-longpress="longpress">长按</button>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,7 @@
 <template>
-  <button v-copy="value">Copy</button>
+  <div>
+    <button v-copy="value">Copy</button>
+  </div>
 </template>
 
 <script>

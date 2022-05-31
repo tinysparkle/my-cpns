@@ -8,6 +8,7 @@
     <Permission/>
     <WaterMarker/>
     <Draggable/>
+    <Number/>
   </div>
 </template>
 

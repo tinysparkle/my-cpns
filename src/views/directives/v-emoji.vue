@@ -1,5 +1,7 @@
 <template>
-  <input type="text" v-model="note" v-emoji />
+  <div>
+    <input type="text" v-model="note" v-emoji />
+  </div>
 </template>
 
 <script>

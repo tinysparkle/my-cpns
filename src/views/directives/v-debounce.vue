@@ -1,5 +1,7 @@
 <template>
-  <button v-debounce="debounceClick">防抖</button>
+  <div>
+    <button v-debounce="debounceClick">防抖</button>
+  </div>
 </template>
 
 <script>
