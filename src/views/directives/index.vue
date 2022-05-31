@@ -1,11 +1,13 @@
 <template>
-  <div class="home-page">
+  <div class="directive-page">
     <Copy/>
     <Longpress/>
     <Debounce/>
     <Emoji/>
     <Lazyload/>
     <Permission/>
+    <WaterMarker/>
+    <Draggable/>
   </div>
 </template>
 
@@ -25,3 +27,8 @@
     }
   }
 </script>
+<style lang="less" scoped>
+.directive-page {
+  position: relative;
+}
+</style>
