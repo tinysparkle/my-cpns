@@ -66,7 +66,7 @@ export default {
 <style lang="less" scoped>
 .slider-3d {
   position: relative;
-  height: 100vh;
+  height: 500px;
   .slider-item {
     position: absolute;
     width: 500px;
