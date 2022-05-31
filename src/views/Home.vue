@@ -2,6 +2,7 @@
   <div class="home-page">
     <Copy/>
     <Longpress/>
+    <Debounce/>
   </div>
 </template>
 
