@@ -3,6 +3,8 @@
     <Copy/>
     <Longpress/>
     <Debounce/>
+    <Emoji/>
+    <Lazyload/>
   </div>
 </template>
 
