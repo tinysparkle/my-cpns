@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>环形进度条</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 300px;
+      height: 300px;
+    }
+
+    .circle-progress-bar {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .circle-progress-bar .title {
+      position: relative;
+      margin: 0;
+      text-align: center;
+      line-height: 300px;
+      font-size: 50px;
+    }
+
+    .circle-progress-bar .wrapper {
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .circle-progress-bar .wrapper.left-wrapper {
+      left: 0;
+    }
+
+    .circle-progress-bar .wrapper.right-wrapper {
+      right: 0;
+    }
+
+    .circle-progress-bar .wrapper .circle-bar {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 30px solid transparent;
+      border-radius: 50%;
+      transform: rotate(-135deg);
+      transition: all ease 50ms;
+    }
+
+    .circle-progress-bar .left-wrapper .circle-bar {
+      left: 0;
+      border-left-color: orange;
+      border-bottom-color: orange;
+    }
+
+    .circle-progress-bar .right-wrapper .circle-bar {
+      right: 0;
+      border-top-color: orange;
+      border-right-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="circle-progress-bar">
+      <h1 class="title">1%</h1>
+      <div class="wrapper left-wrapper">
+        <div class="circle-bar"></div>
+      </div>
+      <div class="wrapper right-wrapper">
+        <div class="circle-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const cpb = circleProgressBar()
+
+    let p = 0
+
+    let t = setInterval(() => {
+      cpb(++p)
+      if (p > 100) clearInterval(t)
+    }, 50);
+
+    function circleProgressBar() {
+      const oLeftCircleBar = getCircle('left'),
+            oRightCircleBar = getCircle('right'),
+            oTitle = document.querySelector('.circle-progress-bar .title')
+
+      return (percent) => {
+        if (percent > 0 && percent <= 50 ) {
+
+          oRightCircleBar.style.transform = formatRotate(percent)
+
+        } else if (percent > 50 && percent <= 100) {
+
+          oLeftCircleBar.style.transform = formatRotate(percent - 50)
+
+        }
+
+        if (percent >= 0 && percent <= 100) {
+          oTitle.innerHTML = `${ percent }%`
+        }
+      }
+
+      function getCircle(dir) {
+        return document.querySelector(`.circle-progress-bar .${ dir }-wrapper .circle-bar`)
+      }
+
+      function formatRotate(percent) {
+        return `rotate(${ -135 + (360 / 100 * percent) }deg)`
+      }
+    }
+  </script>
+</body>
+</html>
