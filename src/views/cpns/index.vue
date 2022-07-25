@@ -3,7 +3,7 @@
     <h1>3D 轮播图</h1>
     <Slider3D/>
     <h1>文件上传</h1>
-    <Upload accept="image/jpeg" />
+    <Upload v-model="photo" :multiple="true" clipping />
     <h1>WangEditor</h1>
     <WangEditor 
       language="zh-CN"
@@ -40,7 +40,8 @@
           { draggable: false, label: '第3层', index: 3 },
           { draggable: true, label: '第4层', index: 4 },
           { draggable: true, label: '第5层', index: 5 },
-        ]
+        ],
+        photo: ''
       }
     }
   }
