@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>实现new的过程</title>
+</head>
+<body>
+  <script>
+
+    function Person (name) {
+      this.name = name
+    }
+
+    Person.prototype.age = 123
+
+    function newFunc (constructor, ...arg) {
+      // 创建对象， 继承构造函数的原型对象
+      const obj = Object.create(constructor.prototype)
+
+      // 调用构造函数 将obj作为构造函数的this
+      constructor.apply(obj, arg) 
+
+      return obj
+    }
+
+
+    const obj = newFunc(Person, 'lucy')
+    console.log('obj: ', obj);
+  </script>
+</body>
+</html>
