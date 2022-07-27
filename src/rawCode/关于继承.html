@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js 实现继承的几种方式</title>
+</head>
+<body>
+  <script>
+    /**
+     * 组合继承 = （ 父类实例作为子类原型对象 + 盗用构造函数 ）
+    */
+    
+    function Person () {
+      this.name = 'xxx'
+      this.info = {
+        age: 18
+      }
+    }
+
+    function Child(arg) {
+      Person.call(this)
+      this.arg = arg
+    }
+
+    Child.prototype = new Person()
+
+    const c = new Child('ooo')
+    
+    console.log(c)
+    
+  </script>
+</body>
+</html>
