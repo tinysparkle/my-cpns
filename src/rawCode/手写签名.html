@@ -55,7 +55,7 @@
 
     <script type="text/javascript">
         var mousePressed = false;
-        var lastX, lastY;
+        var lastX, lastY, initX, initY;
         var ctx = document.getElementById('myCanvas').getContext("2d");
         var oCanvas = document.getElementById("myCanvas");
 
@@ -130,8 +130,9 @@
             //鼠标
             oCanvas.onmousedown = function(event) {
                 mousePressed = true;
-                console.log(this.offsetLeft)
-                Draw(event.pageX - this.offsetLeft, event.pageY - this.offsetTop, false);
+                initX = event.pageX - this.offsetLeft
+                initY = event.pageY - this.offsetTop
+                Draw(initX, initY, false);
             };
 
             oCanvas.onmousemove = function(event) {
@@ -142,6 +143,8 @@
 
             oCanvas.onmouseup = function(event) {
                 mousePressed = false;
+                console.log('x', lastX - initX)
+                console.log('y', lastY - initY)
             };
         }
 
