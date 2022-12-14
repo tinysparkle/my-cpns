@@ -10,6 +10,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 import * as utils from './utils/from-vue'
 
+import MyUi from './modules' 
+Vue.use(MyUi)
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(LazyLoad, { default: require('@/assets/img/logo.png') })

@@ -15,6 +15,8 @@
           {{ scope.row }}
       </template>
     </DragList>
+
+    <ElDatePickerWrapper v-model="datePickValue" />
   </div>
 </template>
 
@@ -41,7 +43,8 @@
           { draggable: true, label: '第4层', index: 4 },
           { draggable: true, label: '第5层', index: 5 },
         ],
-        photo: ''
+        photo: '',
+        datePickValue: Date.now()
       }
     }
   }
