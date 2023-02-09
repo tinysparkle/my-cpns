@@ -16,7 +16,15 @@
       </template>
     </DragList>
 
+    <div>日期选择器，可输入判断年月合法</div>
     <ElDatePickerWrapper v-model="datePickValue" />
+
+    <div style="margin-top: 20px">timer picker</div>
+    <TimePicker 
+      v-model="datePickValue"
+      placeholder="select"
+      :minutesStep="5"
+    />
   </div>
 </template>
 
